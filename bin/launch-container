@@ -1,3 +1,7 @@
 #! /bin/bash
 
-docker start $(docker create --name munin ihsw/munin)
+CURRENT_DIR=$(pwd)
+docker start $(docker create \
+	-v $CURRENT_DIR/../data:/var/lib/munin \
+	--name munin \
+	ihsw/munin)
