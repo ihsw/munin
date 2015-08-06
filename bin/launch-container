@@ -1,0 +1,3 @@
+#! /bin/bash
+
+docker start $(docker create --name munin ihsw/munin)
