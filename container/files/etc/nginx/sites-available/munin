@@ -1,0 +1,13 @@
+server {
+    listen 80;
+
+    location /static/ {
+        alias /etc/munin/static/;
+        expires modified +1w;
+    }   
+
+    location / {
+        alias /var/cache/munin/www/;
+        expires modified +310s;
+    }
+}
