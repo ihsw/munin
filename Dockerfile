@@ -7,6 +7,7 @@ EXPOSE 80
 ### APPLICATION CODE ###
 # munin setup
 RUN mkdir /var/run/munin && chown munin /var/run/munin
+VOLUME /var/lib/munin
 
 # munin-node setup
 RUN sed -i 's/background 1/# background 1/g' /etc/munin/munin-node.conf
